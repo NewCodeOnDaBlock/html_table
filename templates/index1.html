@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for ('static', filename ='style.css')}}">
+    <title>HTML TABLE</title>
+</head>
+<body>
+
+    <div id="table-container">
+        <div class="box1">
+            <div class="row1">
+                <tr>First Name</tr>
+            </div>
+            {% for firstname in table_list %}
+            <div class="row">
+                <tr>{{firstname['first_name']}}</tr>
+            </div>
+            {% endfor %}     
+        </div>
+        <div class="box2">
+            <div class="row1">
+                <tr>Last Name</tr>
+            </div>
+            {% for lastname in table_list %}
+            <div class="row">
+                <tr>{{lastname['last_name']}}</tr>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="box3">
+            <div class="row1">
+                <tr>Full Name</tr>
+            </div>
+            {% for fullname in table_list %}
+            <div class="row">
+                <tr>{{fullname['full_name']}}</tr>
+            </div>
+            {% endfor %}
+        </div>
+        
+
+
+    </div>
+
+
+<script href="{{ url_for ('static', filename='script.js')}}"></script>
+</body>
+</html>
